@@ -1,5 +1,5 @@
 # assets_in_10_seconds
-Creates a short lived asset for demo purposes
+Creates a short lived asset on Twilio's Serverless Platform for demo purposes
 
 This script reads TWILO_ACCOUNT_SID and TWILIO_AUTH_TOKEN from your environment.
 
