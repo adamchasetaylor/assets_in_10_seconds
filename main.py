@@ -80,7 +80,7 @@ build = client.serverless \
 
 # Wait for Build
 
-print("Creating Service")
+print("Creating Build")
 print("##########")
 time.sleep(10)
 
