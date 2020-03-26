@@ -50,7 +50,7 @@ asset = client.serverless \
   .create(friendly_name='friendly_name')
 
 # Create Asset Version
-# This is using a custom 
+# This is using a custom TwilioHttpClient
 # Files hint from https://stackoverflow.com/questions/58278283/how-to-fix-unsupported-media-type-error-on-python-post-request-to-twilio
 
 remote_path = '/myfile.txt'
