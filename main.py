@@ -66,8 +66,8 @@ payload = {'Path': remote_path, 'Visibility': remote_visibility}
 files = {'Content': (asset_file, open(asset_path, 'rb'), asset_type)}
 response = upload_http_client.request('POST', url, data = payload, files = files, auth = upload_auth)
 
-asset_version = json.loads(response.text)
-asset_versions = [ asset_version["sid"] ]
+asset_version = json.loads(response.text).get("sid")
+asset_versions = [ asset_version ]
 
 # Create a Build
 
@@ -75,7 +75,7 @@ build = client.serverless \
   .services(service.sid) \
   .builds \
   .create(
-    asset_versions=asset_versions
+    asset_versions=asset_version
   )
 
 # Wait for Build
@@ -104,7 +104,7 @@ print("##########")
 print(f"Service Sid: {service.sid}")
 print(f"Environment Sid: {environment.sid}")
 print(f"Asset Sid: {asset.sid}")
-print(f"Asset Version Sid: {asset_version['sid']}")
+print(f"Asset Version Sid: {asset_version}")
 print(f"Build Sid: {build.sid}")
 print(f"Deployment Sid: {deployment.sid}")
 print("##########")

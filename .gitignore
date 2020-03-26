@@ -4,3 +4,4 @@ __pycache__
 .vscode
 start.sh
 scratch.py
+testclient.py
